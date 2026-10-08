@@ -13,7 +13,6 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 ENV NEXT_TELEMETRY_DISABLED=1
 RUN npm run build
-
 # ─── Stage 3: Runner ──────────────────────────────────────
 FROM node:20-alpine AS runner
 WORKDIR /app
@@ -23,12 +22,11 @@ RUN apk add --no-cache openssl libc6-compat
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 
-# Copy the full build output + node_modules for a standard "next start"
+# Copy only what's needed to run the built app
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./package.json
-COPY --from=builder /app/next.config.ts ./next.config.ts
 
 EXPOSE 3000
 ENV PORT=3000
