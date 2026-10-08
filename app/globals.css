@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme {
+  /* Warm & Local palette */
+  --color-brand-50: #fdf6ee;
+  --color-brand-100: #f9e7d0;
+  --color-brand-200: #f2ca9f;
+  --color-brand-300: #e9a666;
+  --color-brand-400: #e08a3c;
+  --color-brand-500: #d97223;
+  --color-brand-600: #c25a1a;
+  --color-brand-700: #a14418;
+  --color-brand-800: #81371a;
+  --color-brand-900: #6a2f18;
+
+  --color-ink-50: #faf9f7;
+  --color-ink-100: #f0ece6;
+  --color-ink-200: #ddd5c9;
+  --color-ink-300: #bfb3a1;
+  --color-ink-400: #9a8b76;
+  --color-ink-500: #7d6e5a;
+  --color-ink-600: #665849;
+  --color-ink-700: #52473c;
+  --color-ink-800: #3d3430;
+  --color-ink-900: #24201d;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-ink-50);
+  color: var(--color-ink-900);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Reusable components */
+.gs-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.gs-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--color-brand-600);
+  color: white;
+  font-weight: 600;
+  padding: 0.875rem 1.75rem;
+  border-radius: 0.75rem;
+  transition: all 0.15s ease;
+}
+
+.gs-btn-primary:hover {
+  background: var(--color-brand-700);
+  transform: translateY(-1px);
+}
+
+.gs-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--color-ink-900);
+  font-weight: 600;
+  padding: 0.875rem 1.75rem;
+  border-radius: 0.75rem;
+  border: 2px solid var(--color-ink-300);
+  transition: all 0.15s ease;
+}
+
+.gs-btn-outline:hover {
+  border-color: var(--color-brand-600);
+  color: var(--color-brand-600);
+}
+
+.gs-card {
+  background: white;
+  border-radius: 1rem;
+  border: 1px solid var(--color-ink-200);
+  padding: 2rem;
+  transition: all 0.2s ease;
+}
+
+.gs-card:hover {
+  border-color: var(--color-brand-300);
+  box-shadow: 0 8px 30px rgba(217, 114, 35, 0.08);
+}
+
+.gs-section {
+  padding: 5rem 0;
+}
+
+.gs-eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-brand-600);
+}
